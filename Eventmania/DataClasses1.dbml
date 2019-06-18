@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Eventdb" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Eventdb.mdf;Integrated Security=True" SettingsObjectName="Eventmania.Properties.Settings" SettingsPropertyName="EventdbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="userid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="firstname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="lastname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="username" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="repassword" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="phoneno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="User_Event" Member="Events" ThisKey="userid" OtherKey="userid" Type="Event" />
+      <Association Name="User_Comment" Member="Comments" ThisKey="userid" OtherKey="userid" Type="Comment" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Event" Member="Events">
+    <Type Name="Event">
+      <Column Name="eventid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="eventname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="eventdetails" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="eventvenue" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="userid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="eventcity" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="eventcategory" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Event_Map" Member="Maps" ThisKey="eventid" OtherKey="eventid" Type="Map" />
+      <Association Name="Event_Comment" Member="Comments" ThisKey="eventid" OtherKey="eventid" Type="Comment" />
+      <Association Name="User_Event" Member="User" ThisKey="userid" OtherKey="userid" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Map" Member="Maps">
+    <Type Name="Map">
+      <Column Name="mapid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="eventid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="eventcoordinates" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Event_Map" Member="Event" ThisKey="eventid" OtherKey="eventid" Type="Event" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Comment" Member="Comments">
+    <Type Name="Comment">
+      <Column Name="commentid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="userid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="eventid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="comment" Member="comment1" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Association Name="Event_Comment" Member="Event" ThisKey="eventid" OtherKey="eventid" Type="Event" IsForeignKey="true" />
+      <Association Name="User_Comment" Member="User" ThisKey="userid" OtherKey="userid" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

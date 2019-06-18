@@ -1,0 +1,60 @@
+﻿<Window x:Class="Eventmania.AddEvent"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Eventmania"
+        mc:Ignorable="d"
+        
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="AddEvent" Width="720" Height="640" MaxWidth="720" MaxHeight="640" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Rectangle Margin="320 0 0 0">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#CC935E12" Offset="1"/>
+                    <GradientStop Color="#CCEA4646"/>
+                    <GradientStop Color="#CCB89128" Offset="0.566"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <StackPanel Margin="0,65,390,0">
+            <Label Content="Add Event" Width="115" Background="#CCB89128" Name="pagel" HorizontalAlignment="Center" FontSize="22" FontFamily="Eras ITC" Foreground="#DDFBF5F5" Margin="80,0"></Label>
+            <StackPanel Orientation="Vertical">
+            <StackPanel  Margin="50 50 0 0" MaxHeight="50" Orientation="Horizontal">
+                <TextBox Name="eventnametb"  Margin="5 5 5 5" materialDesign:HintAssist.Hint="Event Name"  Padding="3" Width="200"></TextBox>
+            </StackPanel>
+                <StackPanel  Margin="50 5 0 0" MaxHeight="50" Orientation="Horizontal">
+                    <TextBox Name="categorytb" Margin="5 5 5 5" materialDesign:HintAssist.Hint="Category"  Padding="3" Width="200"></TextBox>
+                </StackPanel>
+                <StackPanel  Margin="50 5 0 0" MaxHeight="50" Orientation="Horizontal">
+                    <TextBox Name="locationtb" Margin="5 5 5 5" materialDesign:HintAssist.Hint="Location"  Padding="3" Width="201"></TextBox>
+                </StackPanel>
+                <StackPanel  Margin="50 5 0 0" MaxHeight="50" Orientation="Horizontal">
+                    <TextBox Name="citytb" Margin="5 5 5 5" materialDesign:HintAssist.Hint="City"  Padding="3" Width="201"></TextBox>
+                </StackPanel>
+                <StackPanel  Margin="50 5 0 0" MaxHeight="50" Orientation="Horizontal">
+                    <TextBox Name="detailstb" Margin="5 5 5 5" materialDesign:HintAssist.Hint="Details"  Padding="3" Width="201"></TextBox>
+                </StackPanel>
+                <StackPanel  Margin="50 5 0 0" MaxHeight="50" Orientation="Horizontal">
+                    <TextBox Name="datetb" Margin="5 5 5 5" materialDesign:HintAssist.Hint="Date"  Padding="3" Width="201"></TextBox>
+                </StackPanel>
+                <StackPanel  Margin="50 50 0 0" MaxHeight="50" Orientation="Horizontal">
+                    <Button Name="add" Margin="5 5 5 5" Content="Add"  Padding="3" Width="201" Background="#CCEA4646"></Button>
+                </StackPanel>
+
+            </StackPanel>
+
+        </StackPanel>
+        
+        
+
+    </Grid>
+</Window>

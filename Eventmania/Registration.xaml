@@ -1,0 +1,67 @@
+﻿<Window x:Class="Eventmania.Registration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Eventmania"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        
+        mc:Ignorable="d"
+        Title="Registration" Width="720" Height="640" MaxWidth="720" MaxHeight="640" WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Image Source="Assets/welcome.png" Margin="320,55,0,65" Stretch="Uniform"/>
+        <Rectangle Margin="320 0 0 0">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#CC935E12" Offset="1"/>
+                    <GradientStop Color="#CCEA4646"/>
+                    <GradientStop Color="#CCB89128" Offset="0.566"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <StackPanel HorizontalAlignment="Left" Width="628">
+            <StackPanel Orientation="Horizontal" Margin="10,0,204,0">
+                <Label Content="Event" Name="titlel" Margin="235 50 0 0" HorizontalAlignment="Center" FontSize="26" FontFamily="Eras ITC" Foreground="#DDFFFFFF" Background="#CCEA4646" />
+                <Label Content="Mania" HorizontalContentAlignment="Left" Name="titlel2" Margin="0 50 0 0" HorizontalAlignment="Center" FontSize="26" FontFamily="Eras ITC" Foreground="#DD0E0303" Background="White" />
+            </StackPanel>
+            <StackPanel Margin="0,45,321,0">
+                <Label Content="User Registration" Background="#CCB89128" Name="pagel" HorizontalAlignment="Center" FontSize="22" FontFamily="Eras ITC" Foreground="#DDFBF5F5"></Label>
+            </StackPanel>
+            
+            <StackPanel Margin="20,25,321,10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+
+                    <TextBox Name="Nametb" materialDesign:HintAssist.Hint="First Name" Margin="0 0 0 0" Padding="3" Grid.Row="0"></TextBox>
+                    <TextBox Name="lastnametb" materialDesign:HintAssist.Hint="Last Name" Padding="3" Grid.Row="1"></TextBox>
+                    <TextBox Name="usernametb" materialDesign:HintAssist.Hint="Username" Padding="3" Grid.Row="2"></TextBox>
+                    <TextBox Name="emailtb" materialDesign:HintAssist.Hint="Email" Padding="3" Grid.Row="3" ></TextBox>
+                    <TextBox Name="passwordtb" materialDesign:HintAssist.Hint="Password" Padding="3" Grid.Row="4" ></TextBox>
+                    <TextBox Name="repasswordtb" materialDesign:HintAssist.Hint="Re Password" Padding="3" Grid.Row="5" ></TextBox>
+                    <TextBox Name="phonenumbertb" materialDesign:HintAssist.Hint="Phone Number" Padding="3" Grid.Row="6" ></TextBox>
+            </Grid>
+        </StackPanel>
+        <StackPanel Margin="35">
+                <Button Name="confirmb" Background="#CCEA4646" Width="200" Content="Confirm" Padding="10 5 10 5" Margin="10" HorizontalAlignment="Center" Click="confirmb_Click"></Button>
+        </StackPanel>
+       
+        </StackPanel>
+    </Grid>
+</Window>
